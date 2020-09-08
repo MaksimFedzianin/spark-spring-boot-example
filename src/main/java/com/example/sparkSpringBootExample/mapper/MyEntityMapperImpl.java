@@ -2,9 +2,9 @@ package com.example.sparkSpringBootExample.mapper;
 
 import com.example.sparkSpringBootExample.entity.MyEntity;
 import org.apache.spark.sql.Row;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class MyEntityMapperImpl implements MyEntityMapper {
 
     @Override

@@ -2,6 +2,9 @@ version: '3'
 services:
   spark-example:
     build: .
+    environment:
+      - MONGODB_URL=mongodb://127.0.0.1:27017/test.myCollection
+      - DATA_FILE=report.xlsx
     ports:
       - "8080:8080"
   mongo:

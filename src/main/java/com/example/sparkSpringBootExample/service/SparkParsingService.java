@@ -4,5 +4,5 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 
 public interface SparkParsingService {
-    Dataset<Row> parse();
+    Dataset<Row> parse(String path);
 }

@@ -13,21 +13,20 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class SparkParsingServiceImpl implements SparkParsingService {
 
-    @Value("${fileName}")
-    private String fileName;
-    @Value("fileDataAddress")
+
+    @Value("${fileDataAddress}")
     private String dataAddress;
     private final SparkSession sparkSession;
 
     @Override
-    public Dataset<Row> parse() {
+    public Dataset<Row> parse(String path) {
         Dataset<Row> dataset = sparkSession.read()
                 .format("com.crealytics.spark.excel")
                 .option("useHeader", "true")
                 .option("inferSchema", "false")
                 .option("dataAddress", dataAddress)
-                .load(fileName);
-        dataset.show(1000);
+                .load(path);
+//        dataset.show(1000);
         return dataset;
     }
 }

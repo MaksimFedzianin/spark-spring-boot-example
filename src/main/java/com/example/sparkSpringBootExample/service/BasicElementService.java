@@ -1,5 +1,5 @@
 package com.example.sparkSpringBootExample.service;
 
-public interface MyEntityService {
+public interface BasicElementService {
     void save();
 }
